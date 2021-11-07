@@ -46,15 +46,15 @@ const start = () => {
                   const info = resp.data
                   let z = 0
                   for (let i=0; i<info.length; i++){
-                      if (info[i].Teacher == teacher){
-                      z += 1
-                      z != 0 ? 
-                          await bot.sendMessage(chatId, 
-                                `Занятие #${z}\n👨‍🎓Дисциплина: ${info[i].disc}\n⏰Время занятия: ${info[i].time}\n⏳Продолжительность: ${info[i].minutes} \n🧍Ученики: ${info[i].pupils} \n📚Класс: ${info[i].class} \n🚪Кабинет: ${info[i].kab}`)
-                          :bot.sendMessage(chatId, 'Занятий с таким преподавателем пока нет') 
-                    }
+                       if (info[i].Teacher == teacher){
+                           z += 1 
+                           await bot.sendMessage(chatId, 
+                               `Занятие #${z}\n👨‍🎓Дисциплина: ${info[i].disc}\n⏰Время занятия: ${info[i].time}\n⏳Продолжительность: ${info[i].minutes} \n🧍Ученики: ${info[i].pupils} \n📚Класс: ${info[i].class} \n🚪Кабинет: ${info[i].kab}`)
+                           }    
+                        }   
+                    if(z == 0) bot.sendMessage(chatId, 'Занятий с таким преподавателем пока нет') 
                 } 
-            })
+            )
         }
         /*
         const dayOrWeek = () => {
