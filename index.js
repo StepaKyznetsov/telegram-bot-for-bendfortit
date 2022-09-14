@@ -1,9 +1,8 @@
 const TelegramBot = require("node-telegram-bot-api")
 require("dotenv").config()
-const {teachers, scheduleParams} = require('./options.js')
-const {VK, KEY, SHEET_NAME} = require('./data.js')
+const {teachers, scheduleParams} = require('./options')
 const {default: axios} = require("axios")
-const {TEACHERS} = require('./data')
+const {TEACHERS, VK, KEY, SHEET_NAME} = require('./data')
 
 const bot = new TelegramBot(process.env.TELEGRAM_BOT_TOKEN, {polling: true})
 
